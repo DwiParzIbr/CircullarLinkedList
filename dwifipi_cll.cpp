@@ -1,3 +1,7 @@
+
+//Dwifi Parizza Ibrahim
+//G1A021092
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -9,19 +13,19 @@ struct Node
 
 struct Node *addToEmpty(struct Node *last, int data)
 {
-	// This function is only for empty list
+	// Function untuk list yang tidak tersedia
 	if (last != NULL)
 	return last;
 
-	// Creating a node dynamically.
+	// Membuat sebuah node .
 	struct Node *temp =
 		(struct Node*)malloc(sizeof(struct Node));
 
-	// Assigning the data.
+	// Menambahkan data.
 	temp -> data = data;
 	last = temp;
 
-	// Creating the link.
+	// Membuat link.
 	last -> next = last;
 
 	return last;
@@ -90,7 +94,7 @@ void traverse(struct Node *last)
 {
 	struct Node *p;
 
-	// If list is empty, return.
+	// Perkondisian jika list kosong,, maka akan kembali
 	if (last == NULL)
 	{
 		cout << "List is empty." << endl;
@@ -111,17 +115,17 @@ void traverse(struct Node *last)
 
 }
 
-// Driven Program
+// Menjalankan program
 int main()
 {
 	struct Node *last = NULL;
 
-	last = addToEmpty(last, 6);
-	last = addBegin(last, 4);
+	last = addToEmpty(last, 10);
 	last = addBegin(last, 2);
-	last = addEnd(last, 8);
-	last = addEnd(last, 12);
-	last = addAfter(last, 10, 8);
+	last = addBegin(last, 8);
+	last = addEnd(last, 14);
+	last = addEnd(last, 4);
+	last = addAfter(last, 112, 6);
 
 	traverse(last);
 
